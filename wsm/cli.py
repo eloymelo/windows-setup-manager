@@ -1,5 +1,5 @@
 import click
-from .config import get_packages
+from .config import get_packages, save_packages
 
 @click.group()
 def cli():
@@ -9,7 +9,6 @@ def cli():
 @cli.command()
 def list():
     "List all packages"
-    print("DEBUG: list command called")
     data = get_packages()
     packages = data['packages']
 
@@ -27,3 +26,46 @@ def list():
         print(f"\n{category}:")
         for package in package_list:
             print(f" - {package}")
+
+@cli.command()
+@click.argument('package_id')
+def add(package_id):
+    "Add a new package to the collection"
+    name = click.prompt("Package name")
+    category = click.prompt("Category")
+    description = click.prompt("Description (optional)", default="")
+    
+    data = get_packages()
+    
+    new_package = {
+        'id': package_id,
+        'name': name,
+        'category': category,
+        'description': description
+    }
+
+    data['packages'].append(new_package)
+    
+    save_packages(data)
+    
+    click.echo(f"Added {name} to the package list.")
+
+@cli.command()
+@click.argument('package_id')
+def remove(package_id):
+    'Remove a package from the collection'
+    data = get_packages()
+    packages = data['packages']
+
+    package_to_remove = None
+    for pkg in packages:
+        if pkg['id'] == package_id:
+            package_to_remove = pkg
+            break
+
+    if package_to_remove:
+        packages.remove(package_to_remove)
+        save_packages(data)
+        click.echo(f"Removed {package_to_remove['name']} from the package list.")
+    else:
+        click.echo(f"Package {package_id} not found.", err=True)

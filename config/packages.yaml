@@ -1,50 +1,41 @@
 packages:
-- id: Google.Chrome
+- category: Browser
+  description: ''
+  id: Google.Chrome
   name: Google Chrome
-  description: ""
-  category: Browser
-
-- id: Brave.Brave
+- category: Browser
+  description: ''
+  id: Brave.Brave
   name: Brave
-  description: ""
-  category: Browser
-
-- id: Mozilla.Firefox
-  name: Mozilla Firefox 
-  description: ""
-  category: Browser
-
-- id: Microsoft.Edge
+- category: Browser
+  description: ''
+  id: Mozilla.Firefox
+  name: Mozilla Firefox
+- category: Browser
+  description: ''
+  id: Microsoft.Edge
   name: Microsoft Edge
-  description: ""
-  category: Browser
-
-- id: 9NKSQGP7F2NH
+- category: Communication
+  description: ''
+  id: 9NKSQGP7F2NH
   name: WhatsApp
-  description: ""
-  category: Communication
-
-- id: Discord.Discord
-  name: Discord 
-  description: ""
-  category: Communication
-
-- id: Proton.ProtonMail
+- category: Communication
+  description: ''
+  id: Discord.Discord
+  name: Discord
+- category: Communication
+  description: ''
+  id: Proton.ProtonMail
   name: Proton Mail
-  description: ""
-  category: Communication
-
-- id: Proton.ProtonPass
-  name: Proton Pass 
-  description: ""
-  category: Security & Privacy
-
-- id: Proton.ProtonVPN
+- category: Security & Privacy
+  description: ''
+  id: Proton.ProtonPass
+  name: Proton Pass
+- category: Security & Privacy
+  description: ''
+  id: Proton.ProtonVPN
   name: Proton VPN
-  description: ""
-  category: Security & Privacy
-
-- id: Cloudflare.Warp
-  name: Cloudflare Warp 
-  description: ""
-  category: Security & Privacy
+- category: Security & Privacy
+  description: ''
+  id: Cloudflare.Warp
+  name: Cloudflare Warp
