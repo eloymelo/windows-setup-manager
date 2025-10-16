@@ -22,6 +22,7 @@ $packageList = @(
     [PSCustomObject]@{
         Category = "{{ pkg.category }}"
         Name = "{{ pkg.name }}"
+        Description = "{{ pkg.description if pkg.description else '' }}"
         ID = "{{ pkg.id }}"
     }{{ "," if not loop.last }}
 {%- endfor %}
