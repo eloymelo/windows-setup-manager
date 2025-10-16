@@ -1,6 +1,7 @@
 import click
 from .config import get_packages, save_packages
 from .generator import generate_script
+from .deployer import deploy_script
 
 @click.group()
 def cli():
@@ -80,3 +81,22 @@ def generate():
     
     click.echo(f"Script generated successfully!")
     click.echo(f"Location: {output_file}")
+
+@cli.command()
+def deploy():
+    """Deploy generated script to website repository"""
+    try:
+        click.echo("Deploying script to website...")
+        
+        dest_file = deploy_script()
+        
+        click.echo(f"Script deployed successfully!")
+        click.echo(f"Deployed to: {dest_file}")
+        click.echo(f"Changes pushed to GitHub")
+    except ValueError as e:
+        click.echo(f"Error: {e}", err=True)
+        click.echo("Set WSM_WEBSITE_PATH environment variable", err=True)
+    except FileNotFoundError as e:
+        click.echo(f"Error: {e}", err=True)
+    except Exception as e:
+        click.echo(f"Deployment failed: {e}", err=True)    
