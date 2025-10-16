@@ -1,41 +1,491 @@
 packages:
-- category: Browser
-  description: ''
-  id: Google.Chrome
-  name: Google Chrome
-- category: Browser
-  description: ''
-  id: Brave.Brave
-  name: Brave
-- category: Browser
-  description: ''
-  id: Mozilla.Firefox
-  name: Mozilla Firefox
-- category: Browser
-  description: ''
-  id: Microsoft.Edge
-  name: Microsoft Edge
-- category: Communication
-  description: ''
-  id: 9NKSQGP7F2NH
-  name: WhatsApp
-- category: Communication
-  description: ''
-  id: Discord.Discord
-  name: Discord
-- category: Communication
-  description: ''
-  id: Proton.ProtonMail
-  name: Proton Mail
-- category: Security & Privacy
-  description: ''
-  id: Proton.ProtonPass
-  name: Proton Pass
-- category: Security & Privacy
-  description: ''
-  id: Proton.ProtonVPN
-  name: Proton VPN
-- category: Security & Privacy
-  description: ''
-  id: Cloudflare.Warp
-  name: Cloudflare Warp
+  # Browsers
+  - id: Google.Chrome
+    name: Google Chrome
+    description: ""
+    category: Browsers
+  
+  - id: Brave.Brave
+    name: Brave
+    description: ""
+    category: Browsers
+  
+  - id: Mozilla.Firefox
+    name: Mozilla Firefox
+    description: ""
+    category: Browsers
+  
+  - id: Microsoft.Edge
+    name: Microsoft Edge
+    description: ""
+    category: Browsers
+
+  # Communication
+  - id: 9NKSQGP7F2NH
+    name: WhatsApp
+    description: ""
+    category: Communication
+  
+  - id: Discord.Discord
+    name: Discord
+    description: ""
+    category: Communication
+  
+  - id: Proton.ProtonMail
+    name: Proton Mail
+    description: ""
+    category: Communication
+
+  # Security & Privacy
+  - id: Proton.ProtonPass
+    name: Proton Pass
+    description: ""
+    category: Security & Privacy
+  
+  - id: Proton.ProtonVPN
+    name: Proton VPN
+    description: ""
+    category: Security & Privacy
+  
+  - id: Cloudflare.Warp
+    name: Cloudflare Warp
+    description: ""
+    category: Security & Privacy
+
+  # Cloud Storage
+  - id: Proton.ProtonDrive
+    name: Proton Drive
+    description: ""
+    category: Cloud Storage
+  
+  - id: ente-io.photos-desktop
+    name: Ente Photos
+    description: ""
+    category: Cloud Storage
+
+  # Gaming
+  - id: Valve.Steam
+    name: Steam
+    description: ""
+    category: Gaming
+  
+  - id: ElectronicArts.EADesktop
+    name: EA Desktop
+    description: ""
+    category: Gaming
+  
+  - id: Ubisoft.Connect
+    name: Ubisoft Connect
+    description: ""
+    category: Gaming
+  
+  - id: ParadoxInteractive.ParadoxLauncher
+    name: Paradox Launcher
+    description: ""
+    category: Gaming
+  
+  - id: NexusMods.Vortex
+    name: Vortex
+    description: ""
+    category: Gaming
+  
+  - id: Blizzard.BattleNet
+    name: Battle.net
+    description: ""
+    category: Gaming
+  
+  - id: Parsec.Parsec
+    name: Parsec
+    description: ""
+    category: Gaming
+
+  # Development
+  - id: Microsoft.VisualStudioCode
+    name: Visual Studio Code
+    description: ""
+    category: Development
+  
+  - id: 9MSVKQC78PK6
+    name: Debian (WSL)
+    description: ""
+    category: Development
+  
+  - id: Python.Launcher
+    name: Python Launcher
+    description: ""
+    category: Development
+  
+  - id: Python.Python.3.9
+    name: Python 3.9
+    description: ""
+    category: Development
+  
+  - id: Oracle.JavaRuntimeEnvironment
+    name: Java Runtime Environment
+    description: ""
+    category: Development
+  
+  - id: OpenJS.NodeJS
+    name: Node.js
+    description: ""
+    category: Development
+  
+  - id: Microsoft.WindowsTerminal
+    name: Windows Terminal
+    description: ""
+    category: Development
+  
+  - id: Git.Git
+    name: Git
+    description: ""
+    category: Development
+  
+  - id: Microsoft.PowerShell
+    name: PowerShell
+    description: ""
+    category: Development
+  
+  - id: JanDeDobbeleer.OhMyPosh
+    name: Oh My Posh
+    description: ""
+    category: Development
+  
+  - id: Anthropic.Claude
+    name: Claude
+    description: ""
+    category: Development
+  
+  - id: Ollama.Ollama
+    name: Ollama
+    description: ""
+    category: Development
+
+  # Productivity
+  - id: TheDocumentFoundation.LibreOffice
+    name: LibreOffice
+    description: ""
+    category: Productivity
+  
+  - id: PDFgear.PDFgear
+    name: PDFgear
+    description: ""
+    category: Productivity
+  
+  - id: Notepad++.Notepad++
+    name: Notepad++
+    description: ""
+    category: Productivity
+  
+  - id: Obsidian.Obsidian
+    name: Obsidian
+    description: ""
+    category: Productivity
+
+  # Media & Entertainment
+  - id: VideoLAN.VLC
+    name: VLC Media Player
+    description: ""
+    category: Media & Entertainment
+  
+  - id: OBSProject.OBSStudio
+    name: OBS Studio
+    description: ""
+    category: Media & Entertainment
+  
+  - id: Spotify.Spotify
+    name: Spotify
+    description: ""
+    category: Media & Entertainment
+  
+  - id: 9NMS233VM4Z9
+    name: Amazon Music
+    description: ""
+    category: Media & Entertainment
+  
+  - id: Audacity.Audacity
+    name: Audacity
+    description: ""
+    category: Media & Entertainment
+  
+  - id: HandBrake.HandBrake
+    name: HandBrake
+    description: ""
+    category: Media & Entertainment
+
+  # Creative Tools
+  - id: GIMP.GIMP.3
+    name: GIMP
+    description: ""
+    category: Creative Tools
+  
+  - id: BlenderFoundation.Blender
+    name: Blender
+    description: ""
+    category: Creative Tools
+  
+  - id: Upscayl.Upscayl
+    name: Upscayl
+    description: ""
+    category: Creative Tools
+
+  # File Management
+  - id: 7zip.7zip
+    name: 7-Zip
+    description: ""
+    category: File Management
+  
+  - id: M2Team.NanaZip
+    name: NanaZip
+    description: ""
+    category: File Management
+  
+  - id: RARLab.WinRAR
+    name: WinRAR
+    description: ""
+    category: File Management
+  
+  - id: qBittorrent.qBittorrent
+    name: qBittorrent
+    description: ""
+    category: File Management
+  
+  - id: SoftDeluxe.FreeDownloadManager
+    name: Free Download Manager
+    description: ""
+    category: File Management
+  
+  - id: AdrienAllard.FileConverter
+    name: File Converter
+    description: ""
+    category: File Management
+
+  # System Monitoring
+  - id: ALCPU.CoreTemp
+    name: Core Temp
+    description: ""
+    category: System Monitoring
+  
+  - id: CPUID.HWMonitor
+    name: HWMonitor
+    description: ""
+    category: System Monitoring
+  
+  - id: CPUID.CPU-Z
+    name: CPU-Z
+    description: ""
+    category: System Monitoring
+  
+  - id: TechPowerUp.GPU-Z
+    name: GPU-Z
+    description: ""
+    category: System Monitoring
+  
+  - id: CrystalDewWorld.CrystalDiskInfo
+    name: CrystalDiskInfo
+    description: ""
+    category: System Monitoring
+
+  # System Tools
+  - id: 9P8LTPGCBZXD
+    name: Wintoys
+    description: ""
+    category: System Tools
+  
+  - id: MartiCliment.UniGetUI
+    name: UniGetUI
+    description: ""
+    category: System Tools
+  
+  - id: Chocolatey.Chocolatey
+    name: Chocolatey
+    description: ""
+    category: System Tools
+  
+  - id: Eassos.DiskGenius
+    name: DiskGenius
+    description: ""
+    category: System Tools
+  
+  - id: MiniTool.PartitionWizard.Free
+    name: MiniTool Partition Wizard
+    description: ""
+    category: System Tools
+  
+  - id: IObit.IObitUnlocker
+    name: IObit Unlocker
+    description: ""
+    category: System Tools
+
+  # Customization
+  - id: 9PF4KZ2VN4W9
+    name: TranslucentTB
+    description: ""
+    category: Customization
+  
+  - id: Nilesoft.Shell
+    name: Nilesoft Shell
+    description: ""
+    category: Customization
+  
+  - id: StartIsBack.StartAllBack
+    name: StartAllBack
+    description: ""
+    category: Customization
+  
+  - id: FxSound.FxSound
+    name: FxSound
+    description: ""
+    category: Customization
+
+  # Hardware & Drivers
+  - id: Corsair.iCUE.5
+    name: Corsair iCUE
+    description: ""
+    category: Hardware & Drivers
+  
+  - id: Logitech.OptionsPlus
+    name: Logitech Options+
+    description: ""
+    category: Hardware & Drivers
+  
+  - id: Logitech.GHUB
+    name: Logitech G HUB
+    description: ""
+    category: Hardware & Drivers
+  
+  - id: Logitech.LogiTune
+    name: Logi Tune
+    description: ""
+    category: Hardware & Drivers
+  
+  - id: Wacom.WacomTabletDriver
+    name: Wacom Tablet Driver
+    description: ""
+    category: Hardware & Drivers
+  
+  - id: Nvidia.PhysX
+    name: NVIDIA PhysX
+    description: ""
+    category: Hardware & Drivers
+
+  # Utilities
+  - id: Starpine.Screenbox
+    name: Screenbox
+    description: ""
+    category: Utilities
+  
+  - id: 9N7JSXC1SJK6
+    name: Blip Transfer
+    description: ""
+    category: Utilities
+  
+  - id: 9WZDNCRFJ3PR
+    name: Windows Clock
+    description: ""
+    category: Utilities
+  
+  - id: 9WZDNCRFJBBG
+    name: Windows Voice Recorder
+    description: ""
+    category: Utilities
+  
+  - id: Nickvision.Parabolic
+    name: Parabolic
+    description: ""
+    category: Utilities
+  
+  - id: LocalSend.LocalSend
+    name: LocalSend
+    description: ""
+    category: Utilities
+  
+  - id: Famatech.RadminVPN
+    name: Radmin VPN
+    description: ""
+    category: Utilities
+
+  # System Dependencies
+  - id: Microsoft.AppInstaller
+    name: App Installer
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.DotNet.DesktopRuntime.6
+    name: .NET Desktop Runtime 6
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.DotNet.DesktopRuntime.8
+    name: .NET Desktop Runtime 8
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.ServerSpeechPlatformRuntime
+    name: Server Speech Platform Runtime
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.VCLibs.Desktop.14
+    name: VC Libs Desktop 14
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.VCRedist.2005.x86
+    name: VC++ 2005 Redistributable x86
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.VCRedist.2008.x64
+    name: VC++ 2008 Redistributable x64
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.VCRedist.2008.x86
+    name: VC++ 2008 Redistributable x86
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.VCRedist.2010.x64
+    name: VC++ 2010 Redistributable x64
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.VCRedist.2010.x86
+    name: VC++ 2010 Redistributable x86
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.VCRedist.2012.x64
+    name: VC++ 2012 Redistributable x64
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.VCRedist.2012.x86
+    name: VC++ 2012 Redistributable x86
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.VCRedist.2013.x64
+    name: VC++ 2013 Redistributable x64
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.VCRedist.2013.x86
+    name: VC++ 2013 Redistributable x86
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.VCRedist.2015+.x64
+    name: VC++ 2015-2022 Redistributable x64
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.VCRedist.2015+.x86
+    name: VC++ 2015-2022 Redistributable x86
+    description: ""
+    category: System Dependencies
+  
+  - id: Microsoft.VSTOR
+    name: Visual Studio Tools for Office Runtime
+    description: ""
+    category: System Dependencies

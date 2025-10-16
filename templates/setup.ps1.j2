@@ -16,36 +16,52 @@ if (!(Get-Command winget -ErrorAction SilentlyContinue)) {
     exit 1
 }
 
-# Package list
-$packages = @(
+# Build package list with categories
+$packageList = @(
 {%- for pkg in packages %}
-    "{{ pkg.id }}"{{ "," if not loop.last }}
+    [PSCustomObject]@{
+        Category = "{{ pkg.category }}"
+        Name = "{{ pkg.name }}"
+        ID = "{{ pkg.id }}"
+    }{{ "," if not loop.last }}
 {%- endfor %}
 )
 
-Write-Host "Found $($packages.Count) packages to install" -ForegroundColor Green
+Write-Host "Total available packages: $($packageList.Count)" -ForegroundColor Green
+Write-Host "Select packages to install from the window that opens..." -ForegroundColor Yellow
+Write-Host ""
+
+# Show selection window
+$selected = $packageList | Out-GridView -Title "Select packages to install" -OutputMode Multiple
+
+if ($selected.Count -eq 0) {
+    Write-Host "No packages selected. Exiting." -ForegroundColor Yellow
+    exit 0
+}
+
+Write-Host "Installing $($selected.Count) packages..." -ForegroundColor Green
 Write-Host ""
 
 $installed = 0
 $failed = @()
 
-foreach ($pkg in $packages) {
-    Write-Host "Installing $pkg..." -NoNewline
+foreach ($pkg in $selected) {
+    Write-Host "[$($installed + 1)/$($selected.Count)] Installing $($pkg.Name)..." -NoNewline
     
     try {
-        winget install --id $pkg --silent --accept-source-agreements --accept-package-agreements --disable-interactivity | Out-Null
+        winget install --id $pkg.ID --silent --accept-source-agreements --accept-package-agreements --disable-interactivity 2>&1 | Out-Null
         Write-Host " Done" -ForegroundColor Green
         $installed++
     }
     catch {
         Write-Host " Failed" -ForegroundColor Red
-        $failed += $pkg
+        $failed += $pkg.Name
     }
 }
 
 Write-Host ""
 Write-Host "Installation Complete!" -ForegroundColor Cyan
-Write-Host "Installed: $installed/$($packages.Count)" -ForegroundColor Green
+Write-Host "Installed: $installed/$($selected.Count)" -ForegroundColor Green
 
 if ($failed.Count -gt 0) {
     Write-Host "Failed: $($failed.Count)" -ForegroundColor Red
