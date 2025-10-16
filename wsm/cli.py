@@ -1,5 +1,6 @@
 import click
 from .config import get_packages, save_packages
+from .generator import generate_script
 
 @click.group()
 def cli():
@@ -69,3 +70,13 @@ def remove(package_id):
         click.echo(f"Removed {package_to_remove['name']} from the package list.")
     else:
         click.echo(f"Package {package_id} not found.", err=True)
+
+@cli.command()
+def generate():
+    """Generate PowerShell setup script"""
+    click.echo("Generating PowerShell script...")
+    
+    output_file = generate_script()
+    
+    click.echo(f"Script generated successfully!")
+    click.echo(f"Location: {output_file}")

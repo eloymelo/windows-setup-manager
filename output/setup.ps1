@@ -1,7 +1,7 @@
 #Requires -RunAsAdministrator
 # Windows Setup Manager
-# Generated: {{ timestamp }}
-# Total packages: {{ packages|length }}
+# Generated: 2025-10-16 08:01:29
+# Total packages: 10
 
 $ErrorActionPreference = "Stop"
 
@@ -18,9 +18,16 @@ if (!(Get-Command winget -ErrorAction SilentlyContinue)) {
 
 # Package list
 $packages = @(
-{%- for pkg in packages %}
-    "{{ pkg.id }}"{{ "," if not loop.last }}
-{%- endfor %}
+    "Google.Chrome",
+    "Brave.Brave",
+    "Mozilla.Firefox",
+    "Microsoft.Edge",
+    "9NKSQGP7F2NH",
+    "Discord.Discord",
+    "Proton.ProtonMail",
+    "Proton.ProtonPass",
+    "Proton.ProtonVPN",
+    "Cloudflare.Warp"
 )
 
 Write-Host "Found $($packages.Count) packages to install" -ForegroundColor Green
